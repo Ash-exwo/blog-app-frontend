@@ -19,8 +19,6 @@ const SignUp = () => {
         });
     };
 
-    //   const readValue = () => {
-
     //     console.log(input);
 
     //     axios.post("http://localhost:3001/sign-up", input)
