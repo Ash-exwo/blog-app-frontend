@@ -4,6 +4,11 @@ import axios from "axios";
 
 const SignIn = () => {
 
+  const [count, changeCount] = useState(0)
+
+  const [disabled, setDisabled] = useState(false);
+
+
   const [input, changeInput] = useState({
     email: "",
     password: ""
@@ -25,11 +30,11 @@ const SignIn = () => {
   const readValue = () => {
 
     console.log(input);
-  
+
     axios.post("http://localhost:3001/sign-in", input)
       .then((response) => {
-  
-        console.log(response.data);
+        // console.log(response)
+        console.log(response.status);
   
   
         if (response.data.status === "Incorrect Password") {
@@ -72,11 +77,14 @@ const SignIn = () => {
   
       })
       .catch((error) => {
-  
-  
+
+        console.log(count)
+        changeCount(count+1)
+        if (count>=2) {
+          setDisabled(true)
+        }
         console.log(error);
-  
-        alert("Failed to sign in");
+        alert(error.response.data.status);
   
   
       });
@@ -396,6 +404,8 @@ const SignIn = () => {
                       className="signin-submit-btn"
 
                       onClick={readValue}
+
+                      disabled={disabled}
 
                     >
 
