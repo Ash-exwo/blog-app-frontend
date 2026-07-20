@@ -24,8 +24,6 @@ const SignUp = () => {
 
     };
 
-
-
     const readValue = () => {
 
         if (
@@ -41,16 +39,12 @@ const SignUp = () => {
 
         }
 
-
-
         if (input.password !== input.confirmPassword) {
 
             alert("Passwords do not match");
             return;
 
         }
-
-
 
         console.log(input);
 
@@ -102,7 +96,6 @@ const SignUp = () => {
     };
 
 
-
     return (
 
         <div className="signup-page">
@@ -135,16 +128,11 @@ const SignUp = () => {
 
                 <div className="row min-vh-100 align-items-center justify-content-center py-5">
 
-
                     <div className="col-xl-10 col-lg-11">
-
 
                         <div className="signup-container">
 
-
-
                             <div className="signup-info">
-
 
                                 <div className="brand-logo">
 
@@ -158,19 +146,13 @@ const SignUp = () => {
 
                                 </div>
 
-
-
-
                                 <div className="signup-info-content">
-
 
                                     <div className="mini-badge">
 
                                         ✦ YOUR STORIES MATTER
 
                                     </div>
-
-
 
                                     <h1>
 
